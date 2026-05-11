@@ -1,23 +1,16 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import DashboardView from '@/views/DashboardView.vue'
-import FoodMainView from '@/views/FoodMainView.vue'
-import LeftoverRecipeView from '@/views/LeftoverRecipeView.vue'
 import FoodDisposalView from '@/views/FoodDisposalView.vue'
-import LeftoverRecipeViewAlt from '@/views/LeftoverRecipeViewAlt.vue'
 import LeftoverRecipeViewAltTwo from '@/views/LeftoverRecipeViewAltTwo.vue'
 import WelcomeView from '@/views/WelcomeView.vue'
-
+import ClothingAwarenessView from '@/views/ClothingAwarenessView.vue'
+import ClothingQuestionaireView from '@/views/ClothingQuestionaireView.vue'
+import ClothingImpactDashboard from '@/views/ClothingImpactDashboard.vue'
 
 const routes = [
     {
         path: '/',
         name: 'Home',
         component: WelcomeView
-    },
-    {
-        path: '/food',
-        name: 'Food',
-        component: FoodMainView
     },
     {
         path: '/food1',
@@ -28,11 +21,27 @@ const routes = [
         path: '/food2',
         name: 'Leftover Disposal',
         component: FoodDisposalView
+    },
+
+    {
+        path: '/clothing/awareness',
+        name: 'Clothing Awareness',
+        component: ClothingAwarenessView
+    },
+    {
+        path: '/clothing/questionaire',
+        name: 'Clothing Questionaire',
+        component: ClothingQuestionaireView
+    },
+    {
+        path: '/clothing/calculator',
+        name: 'Clothing Calculator',
+        component: ClothingImpactDashboard
     }
 ]
 
 const router = createRouter({
-    history: createWebHistory('/FIT5120-Consumption-Advisor/archive/'),
+    history: createWebHistory(import.meta.env.BASE_URL),
     routes
 })
 
